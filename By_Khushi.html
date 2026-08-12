@@ -327,7 +327,62 @@
      SPECIAL MEMORY MESSAGE
      ============================================================ */
   #specialMemory{ background: linear-gradient(180deg, var(--white), var(--blush)); }
+  #specialMemory .glass{
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255,143,177,0.55);
+    box-shadow: 0 0 46px rgba(255,143,177,0.35), var(--shadow-soft);
+  }
+  #specialMemory .glass::before{
+    content: "❝";
+    position: absolute;
+    top: -18px; left: 18px;
+    font-family: var(--font-hand);
+    font-size: 5.5rem;
+    line-height: 1;
+    color: rgba(255,92,149,0.22);
+    z-index: 1;
+    pointer-events: none;
+  }
+  #specialMemory .glass::after{
+    content: "💗";
+    position: absolute;
+    bottom: -14px; right: 6px;
+    font-size: 4.5rem;
+    opacity: 0.12;
+    transform: rotate(-12deg);
+    z-index: 1;
+    pointer-events: none;
+  }
+  #specialMemory h2{ margin-bottom: 0.5rem; }
+  #specialMemory .accent-line{
+    width: 72px; height: 3px;
+    background: linear-gradient(90deg, var(--pink), var(--lavender));
+    margin: 0 auto 1.8rem;
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba(255,143,177,0.6);
+  }
+  #specialMemory .message-block{ position: relative; z-index: 2; }
   #specialMemory .message-block p{ margin-bottom: 1.1rem; }
+  #specialMemory .message-block p.reveal{ transition-delay: 0s; }
+  #specialMemory .message-block p.reveal:nth-of-type(2){ transition-delay: 0.25s; }
+  #specialMemory .heart-divider{
+    text-align: center;
+    font-size: 1.2rem;
+    letter-spacing: 0.4rem;
+    color: var(--pink);
+    opacity: 0.75;
+    margin: 0.2rem 0 1.3rem;
+  }
+  #specialMemory .signature{
+    text-align: right;
+    font-family: var(--font-hand);
+    font-size: 1.7rem;
+    color: var(--rose);
+    margin-top: 0.6rem;
+    position: relative;
+    z-index: 2;
+  }
 
   /* ============================================================
      QUIZ
@@ -597,18 +652,21 @@
   <section class="section" id="specialMemory">
     <div class="glass reveal">
       <h2>Since The Day I Met You... 🥹</h2>
+      <div class="accent-line"></div>
       <div class="message-block">
-        <p>
+        <p class="reveal">
           I remember that first day when I saw you in school, and I also remember the first day when
           I realized I'm falling for you, and I also remember the first day when I cried a lot for you.
           I remember the first day when I realized I was so scared of losing you!!!!!
         </p>
-        <p>
+        <div class="heart-divider">♡ ♡ ♡</div>
+        <p class="reveal">
           I remember every single moment I've spent with you. I don't think there are any words to
           describe our bond, so I just wanna say I love you sooo soo much. You are always in my heart,
           there is no one in my life like you, sooo I love you soooooo much more.
         </p>
       </div>
+      <div class="signature">— always, your person 💗</div>
     </div>
   </section>
 
